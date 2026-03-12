@@ -1,0 +1,107 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO sensordb.trajectory (recording_id, domain, interpolation_type, extrapolation_type)\n        VALUES ($1, $2, $3, $4)\n        RETURNING id, recording_id, domain AS \"domain!: TrajectoryDomain\", interpolation_type AS \"interpolation_type!: InterpolationType\", extrapolation_type AS \"extrapolation_type!: ExtrapolationType\"\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 1,
+        "name": "recording_id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 2,
+        "name": "domain!: TrajectoryDomain",
+        "type_info": {
+          "Custom": {
+            "name": "sensordb.trajectory_domain",
+            "kind": {
+              "Enum": [
+                "timed",
+                "sequence"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "interpolation_type!: InterpolationType",
+        "type_info": {
+          "Custom": {
+            "name": "sensordb.interpolation_type",
+            "kind": {
+              "Enum": [
+                "step",
+                "linear"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "extrapolation_type!: ExtrapolationType",
+        "type_info": {
+          "Custom": {
+            "name": "sensordb.extrapolation_type",
+            "kind": {
+              "Enum": [
+                "constant"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int4",
+        {
+          "Custom": {
+            "name": "sensordb.trajectory_domain",
+            "kind": {
+              "Enum": [
+                "timed",
+                "sequence"
+              ]
+            }
+          }
+        },
+        {
+          "Custom": {
+            "name": "sensordb.interpolation_type",
+            "kind": {
+              "Enum": [
+                "step",
+                "linear"
+              ]
+            }
+          }
+        },
+        {
+          "Custom": {
+            "name": "sensordb.extrapolation_type",
+            "kind": {
+              "Enum": [
+                "constant"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "e6a26d883ddd9266b2143dcc888d606d62faf7e236d7b03c5ec7be746e961fe1"
+}

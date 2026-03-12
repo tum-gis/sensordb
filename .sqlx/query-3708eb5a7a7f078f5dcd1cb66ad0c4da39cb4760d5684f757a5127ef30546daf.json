@@ -1,0 +1,25 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT sensordb_pkg.AssociatePointCloudCellToFeature($1, $2, $3, $4);\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "associatepointcloudcelltofeature",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int4",
+        "Float4",
+        "Float4",
+        "Float4"
+      ]
+    },
+    "nullable": [
+      null
+    ]
+  },
+  "hash": "3708eb5a7a7f078f5dcd1cb66ad0c4da39cb4760d5684f757a5127ef30546daf"
+}

@@ -1,0 +1,29 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n    INSERT INTO sensordb.mission (campaign_id, name)\n    VALUES ($1, $2)\n    ON CONFLICT (name, campaign_id) DO UPDATE SET name = mission.name\n    RETURNING id, name\n    ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 1,
+        "name": "name",
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int4",
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false
+    ]
+  },
+  "hash": "770bebaea158dcac7f71bace567156f69160ac1c315121644e28f4e37dd223de"
+}

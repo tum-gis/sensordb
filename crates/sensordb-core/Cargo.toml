@@ -1,0 +1,35 @@
+[package]
+name = "sensordb-core"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Core primitives and operations for analyzing sensor data by leveraging semantic environment models."
+
+[dependencies]
+ecoord = { workspace = true }
+epoint = { workspace = true }
+erosbag = { workspace = true }
+
+
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+sqlx = { workspace = true, features = [ "runtime-tokio", "postgres", "chrono" ] }
+itertools = { workspace = true }
+polars = { workspace = true }
+ndarray = { workspace = true }
+chrono = { workspace = true }
+rayon = { workspace = true }
+nalgebra = { workspace = true }
+indicatif = { workspace = true }
+walkdir = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+humantime = { workspace = true }
+strum = { workspace = true }
+strum_macros = { workspace = true }
+palette = { workspace = true }
+sanitize-filename = { workspace = true }

@@ -1,0 +1,28 @@
+[package]
+name = "sensordb-cli"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "CLI tool for analyzing sensor data by leveraging semantic environment models."
+
+[dependencies]
+sensordb = { version = "0.0.1-alpha.13", path = "../sensordb" }
+
+erosbag = { workspace = true }
+epoint = { workspace = true }
+ecoord = { workspace = true }
+
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+clap = { workspace = true, features = ["derive", "env"] }
+humantime = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+rayon = { workspace = true }
+sysinfo = { workspace = true }
+chrono = { workspace = true }
+walkdir = { workspace = true }
+nalgebra = { workspace = true }

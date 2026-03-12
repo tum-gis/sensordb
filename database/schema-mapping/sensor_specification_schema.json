@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SensorDB Schema",
+  "type": "object",
+  "properties": {
+    "lidar_sensor": {
+      "type": "object",
+      "properties": {
+        "sensor_id": {
+          "type": "integer",
+          "description": "Primary key referencing sensordb.sensor(id)"
+        },
+        "wavelength_range_min": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 800e-9 (meters)"
+        },
+        "wavelength_range_max": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 1200e-9 (meters)",
+          "examples": [1.2e-6]
+        },
+        "max_range": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 200 meters"
+        },
+        "pulse_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 100000 (100 kHz)"
+        },
+        "field_of_view_horizontal_rad": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 0.1 rad"
+        },
+        "field_of_view_vertical_rad": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 0.3 rad"
+        }
+      },
+      "required": [
+        "sensor_id",
+        "wavelength_range_min",
+        "wavelength_range_max",
+        "max_range",
+        "pulse_rate",
+        "field_of_view_horizontal_rad",
+        "field_of_view_vertical_rad"
+      ],
+      "additionalProperties": false
+    },
+
+    "camera_sensor": {
+      "type": "object",
+      "properties": {
+        "sensor_id": {
+          "type": "integer",
+          "description": "Primary key referencing sensordb.sensor(id)"
+        },
+        "sensor_type": {
+          "type": "string",
+          "enum": ["RGB", "Infrared", "Thermal"]
+        },
+        "resolution_horizontal": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "description": "Example: 1920 pixels"
+        },
+        "resolution_vertical": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "description": "Example: 1080 pixels"
+        },
+        "field_of_view_horizontal": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 0.1 rad"
+        },
+        "field_of_view_vertical": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 0.3 rad"
+        },
+        "frame_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 30 fps"
+        }
+      },
+      "required": [
+        "sensor_id",
+        "sensor_type",
+        "resolution_horizontal",
+        "resolution_vertical",
+        "field_of_view_horizontal",
+        "field_of_view_vertical",
+        "frame_rate"
+      ],
+      "additionalProperties": false
+    },
+
+    "radar_sensor": {
+      "type": "object",
+      "properties": {
+        "sensor_id": {
+          "type": "integer",
+          "description": "Primary key referencing sensordb.sensor(id)"
+        },
+        "frequency": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 77e9 Hz"
+        },
+        "max_range": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 200 meters"
+        },
+        "angular_resolution": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 1 rad"
+        },
+        "power_output": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Example: 50 W"
+        }
+      },
+      "required": [
+        "sensor_id",
+        "frequency",
+        "max_range",
+        "angular_resolution",
+        "power_output"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

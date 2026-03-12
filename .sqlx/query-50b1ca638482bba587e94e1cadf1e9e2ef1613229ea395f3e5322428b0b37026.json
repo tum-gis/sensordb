@@ -1,0 +1,22 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\nSELECT id\nFROM sensordb.point_cloud_cell\nWHERE point_cloud_id = $1;\n    ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int4"
+      ]
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "50b1ca638482bba587e94e1cadf1e9e2ef1613229ea395f3e5322428b0b37026"
+}

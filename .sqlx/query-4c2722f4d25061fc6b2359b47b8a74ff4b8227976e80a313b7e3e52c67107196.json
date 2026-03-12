@@ -1,0 +1,22 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT trajectory.id AS id\nFROM sensordb.point_cloud_cell\nJOIN sensordb.point_cloud ON point_cloud_cell.point_cloud_id=point_cloud.id\nJOIN sensordb.trajectory ON point_cloud.recording_id=trajectory.recording_id\nWHERE point_cloud_cell.id=$1;\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int4"
+      ]
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "4c2722f4d25061fc6b2359b47b8a74ff4b8227976e80a313b7e3e52c67107196"
+}

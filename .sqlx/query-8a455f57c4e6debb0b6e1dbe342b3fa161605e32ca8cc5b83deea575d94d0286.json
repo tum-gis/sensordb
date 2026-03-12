@@ -1,0 +1,40 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\nSELECT name AS \"name!\",\n       datatype_id AS \"datatype_id!\",\n       namespace_id AS \"namespace_id!\",\n       is_consistent AS \"is_consistent!\"\nFROM sensordb_pkg.get_point_cloud_attributes($1);\n    ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "name!",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 1,
+        "name": "datatype_id!",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 2,
+        "name": "namespace_id!",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 3,
+        "name": "is_consistent!",
+        "type_info": "Bool"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int4"
+      ]
+    },
+    "nullable": [
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "hash": "8a455f57c4e6debb0b6e1dbe342b3fa161605e32ca8cc5b83deea575d94d0286"
+}

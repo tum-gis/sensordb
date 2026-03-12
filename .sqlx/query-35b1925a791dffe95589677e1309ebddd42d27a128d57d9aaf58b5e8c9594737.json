@@ -1,0 +1,65 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT *\n        FROM sensordb.recording\n        WHERE mission_id = $1 AND name = $2\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 1,
+        "name": "parent_id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 2,
+        "name": "mission_id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 3,
+        "name": "platform_id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 4,
+        "name": "sensor_id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 5,
+        "name": "name",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 6,
+        "name": "start_date",
+        "type_info": "Timestamptz"
+      },
+      {
+        "ordinal": 7,
+        "name": "end_date",
+        "type_info": "Timestamptz"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int4",
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      true,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true
+    ]
+  },
+  "hash": "35b1925a791dffe95589677e1309ebddd42d27a128d57d9aaf58b5e8c9594737"
+}

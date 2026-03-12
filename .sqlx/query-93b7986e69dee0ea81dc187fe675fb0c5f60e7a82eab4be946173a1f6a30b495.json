@@ -1,0 +1,40 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n    INSERT INTO sensordb.platform (name, platform_type, description)\n    VALUES ($1, NULL, NULL)\n    ON CONFLICT (name) DO UPDATE SET name = platform.name\n    RETURNING id, name, platform_type, description\n    ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 1,
+        "name": "name",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 2,
+        "name": "platform_type",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 3,
+        "name": "description",
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      true,
+      true
+    ]
+  },
+  "hash": "93b7986e69dee0ea81dc187fe675fb0c5f60e7a82eab4be946173a1f6a30b495"
+}
