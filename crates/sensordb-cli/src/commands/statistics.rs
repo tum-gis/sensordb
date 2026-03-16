@@ -17,8 +17,7 @@ pub async fn run(
         &connection.get_connection_string(),
         connection.db_max_connections,
     )
-    .await
-    .unwrap();
+    .await?;
 
     fs::create_dir_all(output_statistics_path.as_ref().parent().unwrap()).unwrap();
     database_manager

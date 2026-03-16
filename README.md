@@ -10,14 +10,14 @@
 
 ## About
 
-[3DSensorDB](https://www.sensordb.org) is a geospatial database for storing, managing, and analyzing 3D sensor data.
+[3DSensorDB](https://sensordb.org) is a geospatial database for storing, managing, and analyzing 3D sensor data.
 When combined with semantic 3D environment models in CityGML, sensor observations can be linked and enriched with semantic,
 topological, geometric, and appearance information.
 
 The system is built on [PostgreSQL](https://www.postgresql.org/)/[PostGIS](https://postgis.net/), the [3D City Database](https://github.com/3dcitydb/3dcitydb) supporting [CityGML 1.0–3.0](https://www.ogc.org/standards/citygml/), and [Rust](https://www.rust-lang.org/) for blazingly fast processing.
 
-> This is an early version of the software.
-> For questions regarding its use or if you are interested in the sharded variant for large-scale processing, please contact benedikt.schwab@tum.de.
+>  This is an early version of the software and still has a few rough edges.
+> If you are interested in using the software, extending it for your use case, or in the sharded version for processing massive sensor data amounts, please contact benedikt.schwab@tum.de.
 
 ## Getting Started
 
@@ -180,6 +180,22 @@ cargo run -r -- \
     export \
     --point-cloud-format xyz \
     --directory-path ${HOME}/Desktop/project/export
+```
+
+## Citation
+
+If you use *3DSensorDB* in your research, please cite the [following preprint](https://arxiv.org/abs/2603.11252):
+
+```bibtex
+@misc{schwab2026radiometricfingerprinting,
+      title={Radiometric fingerprinting of object surfaces using mobile laser scanning and semantic 3D road space models},
+      author={Benedikt Schwab and Thomas H. Kolbe},
+      year={2026},
+      eprint={2603.11252},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.11252},
+}
 ```
 
 ### Acknowledgements
