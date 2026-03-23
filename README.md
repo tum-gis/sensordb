@@ -198,6 +198,8 @@ If you use *3DSensorDB* in your research, please cite the [following preprint](h
 }
 ```
 
+The semantic 3D road space models used in this study are publicly available as open data in [this repository](https://github.com/savenow/lod3-road-space-models).
+
 ### Acknowledgements
 
 Sincere thanks to the [development partners](https://docs.3dcitydb.org/latest/contributors/) of the [3D City Database](https://www.3dcitydb.org/), 
